@@ -56,3 +56,5 @@ At last, the plugin is using `MUCEventListener` interface for getting notified o
 To process packets, the plugin also implements `PacketInterceptor` so every packet can go through the plugin. Then, the plugin looks for `<nick>` tag inside `<presense>` root node in packets sent from a user to the room group address. The `<nick>` tag can appear multiple times in my experience, so a simple mechanism to avoid duplicate logs needed to be implemented as well.
 
 Ultimately, the plugin sends logs via asynchronous http requests to a simple external log saving service written in Python/Flask. We could alternatively used rsyslog or something like that in case we wanted text logging, or we can modify the Python script (which currently just saves to a file) to store data in a database in case we want real time access or certain processing to the data.
+
+The source code for the OpenFire plugin is located at `./user-logger-openfire-plugin`, the compiled version of it is already installed on the OpenFire instance. Also, the simple Python service for saving logs can be found on `./user-logger/main.py`.
