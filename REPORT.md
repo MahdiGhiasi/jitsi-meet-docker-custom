@@ -12,6 +12,8 @@ To begin, I've started with *[docker-jitsi-meet](https://github.com/jitsi/docker
 
 Running the project was relatively painless, being a docker-compose file containing all the necessary components for a Jitsi Meet instance. The only problem was, at the time of writing this, the latest version of docker-jitsi-meet [is broken, so I used a previous version instead](https://community.jitsi.org/t/you-have-been-disconnected-on-fresh-docker-installation/89121/5).
 
+The project I've based this on also handles https automatically (obtains a certificate from letsencrypt), so there's nothing to do there as well, other than updating `.env` to enable this option.
+
 ---
 
 ## Replacing Prosody with OpenFire
