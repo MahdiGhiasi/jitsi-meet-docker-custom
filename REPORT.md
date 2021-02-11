@@ -57,4 +57,6 @@ To process packets, the plugin also implements `PacketInterceptor` so every pack
 
 Ultimately, the plugin sends logs via asynchronous http requests to a simple external log saving service written in Python/Flask. We could alternatively used rsyslog or something like that in case we wanted text logging, or we can modify the Python script (which currently just saves to a file) to store data in a database in case we want real time access or certain processing to the data.
 
+Please note that the user-logger python service currently does not have any authentication method, as it's only available locally and is not visible from outside the server.
+
 The source code for the OpenFire plugin is located at `./user-logger-openfire-plugin`, the compiled version of it is already installed on the OpenFire instance. Also, the simple Python service for saving logs can be found on `./user-logger/main.py`.

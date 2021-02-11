@@ -223,8 +223,8 @@ services:
     userlogger:
         build: ./user-logger
         restart: ${RESTART_POLICY}
-        ports:
-            - 8199:8199
+        # ports:
+        #     - 8199:8199
         volumes:
             - ${LOG_FOLDER}/userlogger:/user-logger/logs
         networks:
